@@ -1,0 +1,71 @@
+# java.jdbc
+
+Freezes in annotation gen.
+
+# enlive
+
+Freezes in annotation gen.
+
+# data.int-map
+
+Stack overflow in tools.analyzer.
+
+# data.json
+
+- `list?` preservation
+- sorted set preservation
+- *value-fn* uses pointer equality on functions,
+  breaks after wrapping
+
+- only track up to 20 fn arity
+
+- Freezes in annotations gen
+
+# fs
+
+- Stackoverflow in tools.analyzer (?)
+  - had to comment out `glob` definition
+
+- infinite annotation generation loop
+
+# data.priority-map
+
+- giant deftype does not compile with tools.analyzer
+
+## Annotations
+
+- Merge defalias's that are just `Long`
+  - maybe inline these aliases
+
+- pm-empty-keyfn
+  - 1-arity calls 2-arity
+  - should share aliases for first arg
+    - they're identical anyway
+
+- priority-map-keyfn
+  - kw args, homogeneous
+  - collapse?
+
+- priority-map-by
+  - 1 arg should collapse into kwargs
+
+- MACRO annoation????
+  - apply-keyfn
+
+
+# data.xml
+
+- good experience
+
+## Annotations
+
+- missing defrecord annotation
+  - clojure.data.xml.node.Element
+
+- clojure.data.xml.node/element
+  - takes 1, 2, 3 or 3+ args.
+    - not variable arity
+    - but looks like one
+
+- parse-str
+  - actually kw-args
