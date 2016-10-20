@@ -12,8 +12,10 @@ cd ../math.combinatorics
 ./run.sh
 cd ../java.jdbc
 ./run.sh
-cd ../data.int-map
-./run.sh
+# requires a lot of memory
+#cd ../data.int-map
+#./run.sh
+
 # FIXME very expensive (or runs forever
 #cd ../tools.analyzer.jvm
 #./run.sh
