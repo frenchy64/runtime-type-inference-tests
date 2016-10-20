@@ -19,3 +19,9 @@
 [submodule "java.jdbc"]
 	path = java.jdbc
 	url = git@github.com:frenchy64/java.jdbc.git
+[submodule "tools.analyzer.jvm"]
+	path = tools.analyzer.jvm
+	url = git@github.com:frenchy64/tools.analyzer.jvm.git
+[submodule "data.int-map"]
+	path = data.int-map
+	url = git@github.com:frenchy64/data.int-map.git
