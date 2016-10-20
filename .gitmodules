@@ -1,0 +1,9 @@
+[submodule "data.xml"]
+	path = data.xml
+	url = git@github.com:frenchy64/data.xml.git
+[submodule "startrek-clojure"]
+	path = startrek-clojure
+	url = git@github.com:frenchy64/startrek-clojure.git
+[submodule "data.json"]
+	path = data.json
+	url = git@github.com:frenchy64/data.json.git

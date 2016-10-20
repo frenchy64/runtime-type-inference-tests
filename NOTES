@@ -1,38 +1,53 @@
-# java.jdbc
-
-Freezes in annotation gen.
+[FIXED] Freezes in annotation gen.
 
 # enlive
 
-Freezes in annotation gen.
+[FIXED] Freezes in annotation gen.
 
 # data.int-map
 
-Stack overflow in tools.analyzer.
+Broken again :(
+
+Fixed using new compiler.
+
+- [FIXED] broken tests
+  - cast errors between primitive and normal functions
+    - FIXED: CTYP-316
+  - StackOverflow errors
+    - try futures?
+    - FIXED: CTYP-320
+  - map equivalence errors
+    - FIXED: CTYP-319
+
+- [TODO] generative tests??????
 
 # data.json
 
-- `list?` preservation
-- sorted set preservation
-- *value-fn* uses pointer equality on functions,
+- [FIXED?] *value-fn* uses pointer equality on functions,
   breaks after wrapping
+  - manually fixed by introducing 
+  - TODO: pull request to data.json
 
 - only track up to 20 fn arity
 
 - Freezes in annotations gen
 
+- try implementing equals in the function to be
+  "pointer equals" still to the original thing
+  ; (= *value-fn* (f v))
+
 # fs
 
-- Stackoverflow in tools.analyzer (?)
-  - had to comment out `glob` definition
-
-- infinite annotation generation loop
+[FIXED] - infinite annotation generation loop
 
 # data.priority-map
 
-- giant deftype does not compile with tools.analyzer
+- [FIXED] Wrapper equiv problem
+  - fixed :)
 
 ## Annotations
+
+- should emit deftype annotations
 
 - Merge defalias's that are just `Long`
   - maybe inline these aliases
