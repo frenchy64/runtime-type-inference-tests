@@ -7,3 +7,9 @@
 [submodule "data.json"]
 	path = data.json
 	url = git@github.com:frenchy64/data.json.git
+[submodule "fs"]
+	path = fs
+	url = git@github.com:frenchy64/fs.git
+[submodule "data.priority-map"]
+	path = data.priority-map
+	url = git@github.com:frenchy64/data.priority-map.git
