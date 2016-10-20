@@ -84,3 +84,33 @@ Fixed using new compiler.
 
 - parse-str
   - actually kw-args
+
+
+# How evaluate
+
+## qualitative
+
+Does it make sense??
+
+1. Don't run, gen type, manual inspection
+  - done on something small but real
+  - star trek game?
+2. Generate types, try type checking programs
+  - record what changes needed to get it to
+    type check 
+  - (on a different program than 1.) 
+
+3. Generate spec, insert the spec, run the test
+   with the spec on, also generate tests
+  - does spec ignore the input??
+    or just generate tests
+  - best situation:
+    - spec all passes
+    - then types check with minimal changes
+  - Q: can we use spec's tests to improve
+       types, iteratively?
+       (could throw away exceptions, throw
+        away bad input etc., different options
+        here)
+(optional)
+4. Generate types, use gradual typing
