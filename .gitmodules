@@ -13,3 +13,9 @@
 [submodule "data.priority-map"]
 	path = data.priority-map
 	url = git@github.com:frenchy64/data.priority-map.git
+[submodule "math.combinatorics"]
+	path = math.combinatorics
+	url = git@github.com:frenchy64/math.combinatorics.git
+[submodule "java.jdbc"]
+	path = java.jdbc
+	url = git@github.com:frenchy64/java.jdbc.git

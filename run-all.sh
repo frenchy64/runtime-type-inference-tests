@@ -8,3 +8,7 @@ cd ../data.json
 ./run.sh
 cd ../fs
 ./run.sh
+cd ../math.combinatorics
+./run.sh
+cd ../java.jdbc
+./run.sh
