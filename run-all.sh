@@ -2,6 +2,8 @@
 
 BRANCH_NAME=infer-types
 
+# ensure we eventually checkout a branch called $BRANCH_NAME
+# will eventually track origin/$BRANCH_NAME
 function git_branch {
   git branch -D $BRANCH_NAME
   git fetch origin $BRANCH_NAME
