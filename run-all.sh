@@ -31,10 +31,9 @@ run_tests data.json
 run_tests fs
 run_tests math.combinatorics
 run_tests java.jdbc
-# requires a lot of memory
-#cd ../data.int-map
-#./run.sh
 
-# FIXME very expensive (or runs forever
-#cd ../tools.analyzer.jvm
-#./run.sh
+# requires a lot of memory
+#run_tests data.int-map
+
+# FIXME very expensive (or runs forever)
+#run_tests tools.analyzer.jvm
