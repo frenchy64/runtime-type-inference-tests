@@ -1,39 +1,56 @@
 #!/bin/bash
 
-BRANCH_NAME=infer-types
+INFER_TYPE=./run.sh
+INFER_SPEC=./run-spec.sh
+TYPE_BRANCH_NAME=infer-types
+SPEC_BRANCH_NAME=infer-specs
 
 # ensure we eventually checkout a branch called $BRANCH_NAME
 # will eventually track origin/$BRANCH_NAME
 function git_branch {
-  git branch -D $BRANCH_NAME
-  #git fetch origin $BRANCH_NAME
-  #git checkout -b $BRANCH_NAME origin/$BRANCH_NAME
-  git checkout -B $BRANCH_NAME
+  git checkout master
+  git branch -D $1
+  #git fetch origin $1
+  #git checkout -b $1 origin/$1
+  git checkout -B $1
 }
 
 function git_push {
   git add src
-  git commit -m "infer types"
-  git push origin $BRANCH_NAME:$BRANCH_NAME -f
+  git commit -m "infer"
+  git push origin $1:$1 -f
 }
 
-function run_tests {
+function infer_types {
   cd $1
-  git_branch
-  ./run.sh
-  git_push
+  git_branch $TYPE_BRANCH_NAME
+  $INFER_TYPE
+  git_push $TYPE_BRANCH_NAME
   cd ..
 }
 
-run_tests startrek-clojure
-run_tests data.xml
-run_tests data.json
-run_tests fs
-run_tests math.combinatorics
-run_tests java.jdbc
+function infer_specs {
+  cd $1
+  git_branch $SPEC_BRANCH_NAME
+  $INFER_SPEC
+  git_push $SPEC_BRANCH_NAME
+  cd ..
+}
+
+function infer_all {
+  infer_types $1
+  infer_specs $1
+}
+
+infer_all startrek-clojure
+infer_all data.xml
+infer_all data.json
+infer_all fs
+infer_all math.combinatorics
+infer_all java.jdbc
 
 # requires a lot of memory
-#run_tests data.int-map
+#infer_types data.int-map
 
 # FIXME very expensive (or runs forever)
-#run_tests tools.analyzer.jvm
+#infer_types tools.analyzer.jvm
